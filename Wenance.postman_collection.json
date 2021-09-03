@@ -1,24 +1,17 @@
 {
 	"info": {
-		"_postman_id": "766e0625-a019-4fb7-97a1-37f237a562aa",
+		"_postman_id": "c65ead33-ee97-4fbc-93b4-040cb27da675",
 		"name": "Wenance",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "http://localhost:8080/bitcoin",
+			"name": "localhost:8084/bitcoin",
 			"request": {
 				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
+				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/bitcoin",
-					"protocol": "http",
+					"raw": "localhost:8080/bitcoin",
 					"host": [
 						"localhost"
 					],
@@ -31,20 +24,12 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/bitcoin/promedio?desde=2021-08-25 17:50:05.829&hasta=2021-08-25 17:50:45.834",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"name": "localhost:8080/bitcoin/promedio",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "http://localhost:8080/bitcoin/promedio?desde=2021-08-25 17:50:05.829&hasta=2021-08-25 17:50:45.834",
-					"protocol": "http",
+					"raw": "localhost:8080/bitcoin/promedio?desde=2021-09-03 18:10:33.573&hasta=2021-09-03 18:11:43.643",
 					"host": [
 						"localhost"
 					],
@@ -56,11 +41,11 @@
 					"query": [
 						{
 							"key": "desde",
-							"value": "2021-08-25 17:50:05.829"
+							"value": "2021-09-03 18:10:33.573"
 						},
 						{
 							"key": "hasta",
-							"value": "2021-08-25 17:50:45.834"
+							"value": "2021-09-03 18:11:43.643"
 						}
 					]
 				}

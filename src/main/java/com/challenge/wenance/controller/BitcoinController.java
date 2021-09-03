@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.challenge.wenance.dto.PromedioDTO;
 import com.challenge.wenance.service.BitcoinService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 @RequestMapping("/bitcoin")
+@Slf4j
 public class BitcoinController {
 
 	@Autowired
@@ -19,26 +22,13 @@ public class BitcoinController {
 
 	@GetMapping
 	public void getBitcoin() {
-		Runnable runnable = new Runnable() {
-			@Override
-			public void run() {
-				while (true) {
-					try {
-						Thread.sleep(10000);
-						bitcoinService.getBitcoin();
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-			}
-		};
-		Thread hilo = new Thread(runnable);
-		hilo.start();
-		System.out.println("Comienzan los llamados recurrentes cada 10 segundos");
+		log.info("Se procede a consultar el valor del bitcoin");
+		bitcoinService.getBitcoin();
 	}
 
 	@GetMapping("/promedio")
 	public PromedioDTO getPromedio(Timestamp desde, Timestamp hasta) {
+		log.info("Se procede a calcular el promedio y variación porcentual");
 		return bitcoinService.getPromedio(desde, hasta);
 	}
 
